@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Flagship '22 — Emergence of Eccentricities. The annual entrepreneurship summit of E-Cell VNIT Nagpur." />
+  <title>Flagship '22 — E-Cell VNIT Nagpur</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'background':               '#131313',
+            'surface':                  '#131313',
+            'surface-dim':              '#131313',
+            'surface-bright':           '#393939',
+            'surface-container-lowest': '#0e0e0e',
+            'surface-container-low':    '#1b1b1b',
+            'surface-container':        '#1f1f1f',
+            'surface-container-high':   '#2a2a2a',
+            'surface-container-highest':'#353535',
+            'on-surface':               '#e2e2e2',
+            'on-background':            '#e2e2e2',
+            'on-surface-variant':       '#bfc7d4',
+            'outline':                  '#89919e',
+            'outline-variant':          '#3f4752',
+            'primary':                  '#9dcaff',
+            'on-primary':               '#003257',
+            'primary-container':        '#0298f9',
+            'on-primary-container':     '#fff',
+            'secondary':                '#afc6ff',
+            'on-secondary':             '#002d6c',
+            'secondary-container':      '#0169e8',
+            'on-secondary-container':   '#f2f4ff',
+            'tertiary':                 '#ffb783',
+            'tertiary-container':       '#e37601',
+            'error':                    '#ffb4ab',
+            'error-container':          '#93000a',
+            'on-error-container':       '#ffdad6',
+            'glass-stroke':             'rgba(255,255,255,0.08)',
+            'inverse-surface':          '#e2e2e2',
+            'surface-elevated':         '#111111',
+          },
+          fontFamily: {
+            'sans':       ['Hanken Grotesk', 'sans-serif'],
+            'mono':       ['JetBrains Mono', 'monospace'],
+            'display':    ['Montserrat', 'sans-serif'],
+          },
+          fontSize: {
+            'display-lg':  ['72px',  { lineHeight: '80px',  letterSpacing: '-0.02em', fontWeight: '800' }],
+            'headline-lg': ['48px',  { lineHeight: '56px',  fontWeight: '700' }],
+            'headline-md': ['32px',  { lineHeight: '40px',  fontWeight: '600' }],
+            'body-lg':     ['18px',  { lineHeight: '28px',  fontWeight: '400' }],
+            'body-md':     ['16px',  { lineHeight: '24px',  fontWeight: '400' }],
+            'label-caps':  ['12px',  { lineHeight: '16px',  letterSpacing: '0.1em', fontWeight: '500' }],
+            'btn':         ['14px',  { lineHeight: '20px',  letterSpacing: '0.05em', fontWeight: '600' }],
+          },
+          borderRadius: {
+            'DEFAULT': '4px',
+            'lg':      '8px',
+            'xl':      '12px',
+            'full':    '9999px',
+          },
+          maxWidth: {
+            'container': '1280px',
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+
+<body class="bg-background text-on-surface font-sans antialiased overflow-x-hidden">
+
+<!-- ===================== NAV ===================== -->
+<nav id="main-nav" class="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-xl border-b border-glass-stroke transition-all duration-300">
+  <div class="max-w-container mx-auto px-6 flex items-center justify-between h-18 py-4">
+
+    <!-- Brand -->
+    <a href="#hero" class="flex items-center gap-3 group">
+      <img src="assets/images/ecell-logo.png" alt="E-Cell VNIT" class="h-9 w-auto" onerror="this.style.display='none'" />
+      <div>
+        <span class="font-display font-extrabold text-on-surface text-sm tracking-tight block leading-tight">E-CELL VNIT</span>
+        <span class="font-mono text-label-caps text-primary block">FLAGSHIP '22</span>
+      </div>
+    </a>
+
+    <!-- Desktop Nav -->
+    <div class="hidden md:flex items-center gap-8">
+      <a href="#about"     class="nav-link font-display font-semibold text-btn text-on-surface-variant hover:text-primary transition-colors uppercase tracking-wider">About</a>
+      <a href="#speakers"  class="nav-link font-display font-semibold text-btn text-on-surface-variant hover:text-primary transition-colors uppercase tracking-wider">Speakers</a>
+      <a href="#agenda"    class="nav-link font-display font-semibold text-btn text-on-surface-variant hover:text-primary transition-colors uppercase tracking-wider">Agenda</a>
+      <a href="#gallery"   class="nav-link font-display font-semibold text-btn text-on-surface-variant hover:text-primary transition-colors uppercase tracking-wider">Gallery</a>
+      <a href="#register"  class="nav-link font-display font-semibold text-btn text-on-surface-variant hover:text-primary transition-colors uppercase tracking-wider">Register</a>
+    </div>
+
+    <!-- CTA Desktop -->
+    <a href="#register" class="hidden md:inline-flex items-center gap-2 px-5 py-2.5 bg-primary-container text-on-primary-container font-display font-semibold text-btn uppercase tracking-wider rounded-DEFAULT hover:bg-secondary-container transition-colors duration-200">
+      <span class="material-symbols-outlined text-base" style="font-size:16px">bolt</span>
+      Register Now
+    </a>
+
+    <!-- Mobile Hamburger -->
+    <button id="menu-btn" class="md:hidden text-on-surface p-2 rounded-DEFAULT hover:bg-surface-container-high transition-colors">
+      <span class="material-symbols-outlined text-2xl">menu</span>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="md:hidden bg-surface-container-low border-t border-glass-stroke">
+    <div class="flex flex-col px-6 py-4 gap-4">
+      <a href="#about"    class="font-display font-semibold text-btn text-on-surface-variant hover:text-primary transition-colors uppercase tracking-wider py-2">About</a>
+      <a href="#speakers" class="font-display font-semibold text-btn text-on-surface-variant hover:text-primary transition-colors uppercase tracking-wider py-2">Speakers</a>
+      <a href="#agenda"   class="font-display font-semibold text-btn text-on-surface-variant hover:text-primary transition-colors uppercase tracking-wider py-2">Agenda</a>
+      <a href="#gallery"  class="font-display font-semibold text-btn text-on-surface-variant hover:text-primary transition-colors uppercase tracking-wider py-2">Gallery</a>
+      <a href="#register" class="w-full text-center px-5 py-3 bg-primary-container text-on-primary-container font-display font-semibold text-btn uppercase tracking-wider rounded-DEFAULT">Register Now</a>
+    </div>
+  </div>
+</nav>
+
+
+<!-- ===================== HERO ===================== -->
+<header id="hero" class="relative h-screen max-h-screen flex flex-col items-center justify-center px-6 text-center overflow-hidden">
+
+  <!-- Background glow -->
+  <div class="hero-glow"></div>
+
+  <!-- Grid lines decoration -->
+  <div class="absolute inset-0 pointer-events-none opacity-[0.04]"
+    style="background-image: linear-gradient(rgba(2,152,249,1) 1px, transparent 1px), linear-gradient(90deg, rgba(2,152,249,1) 1px, transparent 1px); background-size: 60px 60px;">
+  </div>
+
+  <!-- Two-column layout -->
+  <div class="relative z-10 w-full max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+
+    <!-- LEFT — Text content -->
+    <div class="flex flex-col gap-5 text-left">
+
+      <!-- Badge -->
+      <div class="flex items-center gap-2 px-4 py-1.5 bg-surface-container border border-glass-stroke rounded-full w-fit fade-up">
+        <span class="w-2 h-2 rounded-full bg-primary-container pulse inline-block"></span>
+        <span class="font-mono text-label-caps text-primary uppercase tracking-widest">Annual Entrepreneurship Summit · VNIT Nagpur</span>
+      </div>
+
+      <!-- Headline -->
+      <div class="fade-up space-y-1">
+        <h1 class="font-display font-black text-on-surface leading-none"
+            style="font-size: clamp(42px, 6vw, 76px); letter-spacing: -0.03em; line-height: 1.0;">
+          FLAGSHIP <span class="gradient-text">'22</span>
+        </h1>
+        <p class="font-display font-semibold text-base md:text-lg text-primary tracking-wider uppercase">
+          Emergence of Eccentricities
+        </p>
+      </div>
+
+      <!-- Sub-text -->
+      <p class="font-sans text-base text-on-surface-variant max-w-md fade-up">
+        The confluence of visionaries, disruptors, and builders — India's most electrifying student-run entrepreneurship summit.
+      </p>
+
+      <!-- Meta info -->
+      <div class="flex flex-wrap items-center gap-4 fade-up">
+        <div class="flex items-center gap-1.5 text-on-surface-variant">
+          <span class="material-symbols-outlined text-primary" style="font-size:16px">calendar_today</span>
+          <span class="font-mono text-label-caps uppercase tracking-wider">Sept 23–24, 2022</span>
+        </div>
+        <div class="w-px h-3 bg-outline-variant"></div>
+        <div class="flex items-center gap-1.5 text-on-surface-variant">
+          <span class="material-symbols-outlined text-primary" style="font-size:16px">location_on</span>
+          <span class="font-mono text-label-caps uppercase tracking-wider">VNIT Nagpur</span>
+        </div>
+      </div>
+
+      <!-- CTA Buttons -->
+      <div class="flex flex-row gap-3 fade-up">
+        <a href="#register"
+           class="inline-flex items-center justify-center gap-2 px-7 py-3 bg-primary-container text-on-primary-container font-display font-semibold text-btn uppercase tracking-wider rounded-DEFAULT hover:bg-secondary-container transition-all duration-200 active:scale-95">
+          <span class="material-symbols-outlined" style="font-size:16px">arrow_forward</span>
+          Register Now
+        </a>
+        <a href="#about"
+           class="inline-flex items-center justify-center gap-2 px-7 py-3 border border-primary text-primary font-display font-semibold text-btn uppercase tracking-wider rounded-DEFAULT hover:bg-primary/10 transition-all duration-200">
+          Explore
+        </a>
+      </div>
+
+      <!-- Countdown -->
+      <div class="fade-up">
+        <p class="font-mono text-label-caps text-on-surface-variant uppercase tracking-widest mb-2">Countdown to the Summit</p>
+        <div id="countdown" class="flex gap-3 flex-wrap">
+          <!-- Filled by JS -->
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT — Logo image -->
+    <div class="hidden lg:flex items-center justify-center fade-up">
+      <div class="relative">
+        <!-- Glow ring behind logo -->
+        <div class="absolute inset-0 rounded-full blur-3xl opacity-20 bg-primary-container scale-110"></div>
+        <img src="assets/images/flagship-logo.png" alt="Flagship '22"
+             class="relative w-72 xl:w-96 drop-shadow-2xl object-contain"
+             onerror="this.parentElement.innerHTML='<div class=\'w-72 xl:w-96 h-72 xl:h-96 rounded-full border border-glass-stroke flex items-center justify-center\'><span class=\'font-display font-black text-7xl gradient-text\'>\'22</span></div>'" />
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-on-surface-variant opacity-40 animate-bounce">
+    <span class="material-symbols-outlined">expand_more</span>
+  </div>
+</header>
+
+
+<!-- ===================== STATS ===================== -->
+<section class="py-16 px-6 bg-surface-container-low border-y border-glass-stroke">
+  <div class="max-w-container mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
+    <div class="stat-card bg-surface-container border border-glass-stroke rounded-lg p-6 text-center fade-up">
+      <p class="font-display font-black text-4xl text-primary-container mb-1">2000+</p>
+      <p class="font-mono text-label-caps text-on-surface-variant uppercase tracking-widest">Attendees</p>
+    </div>
+    <div class="stat-card bg-surface-container border border-glass-stroke rounded-lg p-6 text-center fade-up">
+      <p class="font-display font-black text-4xl text-primary-container mb-1">15+</p>
+      <p class="font-mono text-label-caps text-on-surface-variant uppercase tracking-widest">Speakers</p>
+    </div>
+    <div class="stat-card bg-surface-container border border-glass-stroke rounded-lg p-6 text-center fade-up">
+      <p class="font-display font-black text-4xl text-primary-container mb-1">8</p>
+      <p class="font-mono text-label-caps text-on-surface-variant uppercase tracking-widest">Events</p>
+    </div>
+    <div class="stat-card bg-surface-container border border-glass-stroke rounded-lg p-6 text-center fade-up">
+      <p class="font-display font-black text-4xl text-primary-container mb-1">2 Days</p>
+      <p class="font-mono text-label-caps text-on-surface-variant uppercase tracking-widest">Of Action</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== ABOUT ===================== -->
+<section id="about" class="py-28 px-6 bg-background">
+  <div class="max-w-container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+    <!-- Text -->
+    <div class="space-y-6 fade-up">
+      <div class="flex items-center gap-3">
+        <span class="w-8 h-px bg-primary-container"></span>
+        <span class="font-mono text-label-caps text-primary uppercase tracking-widest">About the Summit</span>
+      </div>
+      <h2 class="font-display font-bold text-headline-lg text-on-surface leading-tight">
+        Where Ideas Meet<br/><span class="gradient-text">Execution</span>
+      </h2>
+      <p class="font-sans text-body-lg text-on-surface-variant">
+        Flagship is the annual entrepreneurship summit organized by the Entrepreneurship Cell of VNIT Nagpur. It is a confluence of industry veterans, successful founders, and the next generation of builders.
+      </p>
+      <p class="font-sans text-body-md text-on-surface-variant">
+        Through keynote sessions, panel discussions, startup expos, workshops, and high-energy networking events — Flagship ignites the entrepreneurial spirit and fosters a culture of bold innovation in Central India.
+      </p>
+      <div class="flex flex-wrap gap-3 pt-2">
+        <span class="px-3 py-1.5 bg-surface-container border border-glass-stroke rounded-full font-mono text-label-caps text-primary uppercase tracking-wider">Keynote Talks</span>
+        <span class="px-3 py-1.5 bg-surface-container border border-glass-stroke rounded-full font-mono text-label-caps text-primary uppercase tracking-wider">Panel Discussions</span>
+        <span class="px-3 py-1.5 bg-surface-container border border-glass-stroke rounded-full font-mono text-label-caps text-primary uppercase tracking-wider">Startup Expo</span>
+        <span class="px-3 py-1.5 bg-surface-container border border-glass-stroke rounded-full font-mono text-label-caps text-primary uppercase tracking-wider">Workshops</span>
+        <span class="px-3 py-1.5 bg-surface-container border border-glass-stroke rounded-full font-mono text-label-caps text-primary uppercase tracking-wider">Networking</span>
+      </div>
+    </div>
+
+    <!-- Images -->
+    <div class="grid grid-cols-2 gap-4 fade-up">
+      <div class="gallery-item rounded-lg overflow-hidden border border-glass-stroke h-52">
+        <img src="assets/images/gallery1.jpg" alt="Flagship Event 1" class="w-full h-full object-cover" />
+        <div class="gallery-overlay"></div>
+      </div>
+      <div class="gallery-item rounded-lg overflow-hidden border border-glass-stroke h-52 mt-8">
+        <img src="assets/images/gallery2.jpg" alt="Flagship Event 2" class="w-full h-full object-cover" />
+        <div class="gallery-overlay"></div>
+      </div>
+      <div class="gallery-item rounded-lg overflow-hidden border border-glass-stroke h-48 col-span-2">
+        <img src="assets/images/gallery3.jpg" alt="Flagship Event 3" class="w-full h-full object-cover" />
+        <div class="gallery-overlay"></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ===================== SPEAKERS ===================== -->
+<section id="speakers" class="py-28 px-6 bg-surface-container-low border-y border-glass-stroke">
+  <div class="max-w-container mx-auto space-y-14">
+
+    <!-- Header -->
+    <div class="text-center space-y-4 fade-up">
+      <div class="flex items-center justify-center gap-3">
+        <span class="w-8 h-px bg-primary-container"></span>
+        <span class="font-mono text-label-caps text-primary uppercase tracking-widest">Eminent Speakers</span>
+        <span class="w-8 h-px bg-primary-container"></span>
+      </div>
+      <h2 class="font-display font-bold text-headline-lg text-on-surface">Learn from the Best</h2>
+      <p class="font-sans text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+        Industry titans, successful founders, and visionary leaders who have built, scaled, and redefined entire industries.
+      </p>
+    </div>
+
+    <!-- Speaker Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+      <!-- Speaker 1 -->
+      <div class="speaker-card bg-surface-container border border-glass-stroke rounded-xl overflow-hidden transition-all duration-300 fade-up">
+        <div class="h-72 overflow-hidden bg-surface-container-high">
+          <img src="assets/images/speaker1.png" alt="Dr. Pramod Padole" class="speaker-img w-full h-full object-cover object-top transition-transform duration-500" />
+        </div>
+        <div class="p-6 border-t border-glass-stroke">
+          <h3 class="font-display font-bold text-xl text-on-surface">Dr. Pramod Padole</h3>
+          <p class="font-mono text-label-caps text-primary uppercase tracking-wider mt-1">Director, VNIT</p>
+          <p class="font-sans text-body-md text-on-surface-variant mt-3 text-sm leading-relaxed">
+            Distinguished director and academic leader of Visvesvaraya National Institute of Technology, Nagpur.
+          </p>
+          <div class="flex gap-2 mt-4">
+            <span class="px-2 py-1 bg-primary/10 border border-primary/20 rounded text-xs font-mono text-primary uppercase tracking-wider">Academia</span>
+            <span class="px-2 py-1 bg-primary/10 border border-primary/20 rounded text-xs font-mono text-primary uppercase tracking-wider">Leadership</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Speaker 2 — Featured -->
+      <div class="speaker-card bg-surface-container border border-primary-container/40 rounded-xl overflow-hidden transition-all duration-300 fade-up relative">
+        <div class="absolute top-4 right-4 z-10 flex items-center gap-1.5 px-3 py-1 bg-primary-container text-on-primary-container rounded-full text-xs font-mono uppercase tracking-wider">
+          <span class="w-1.5 h-1.5 rounded-full bg-on-primary-container pulse inline-block"></span>
+          Featured
+        </div>
+        <div class="h-72 overflow-hidden bg-surface-container-high">
+          <img src="assets/images/speaker2.png" alt="Aman Gupta" class="speaker-img w-full h-full object-cover object-top transition-transform duration-500" />
+        </div>
+        <div class="p-6 border-t border-glass-stroke">
+          <h3 class="font-display font-bold text-xl text-on-surface">Aman Gupta</h3>
+          <p class="font-mono text-label-caps text-primary uppercase tracking-wider mt-1">Co-Founder & CMO, boAt</p>
+          <p class="font-sans text-body-md text-on-surface-variant mt-3 text-sm leading-relaxed">
+            Co-founder of boAt, India's fastest-growing audio and wearables brand valued at over $300M.
+          </p>
+          <div class="flex gap-2 mt-4">
+            <span class="px-2 py-1 bg-primary/10 border border-primary/20 rounded text-xs font-mono text-primary uppercase tracking-wider">D2C</span>
+            <span class="px-2 py-1 bg-primary/10 border border-primary/20 rounded text-xs font-mono text-primary uppercase tracking-wider">Consumer Tech</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Speaker 3 -->
+      <div class="speaker-card bg-surface-container border border-glass-stroke rounded-xl overflow-hidden transition-all duration-300 fade-up">
+        <div class="h-72 overflow-hidden bg-surface-container-high">
+          <img src="assets/images/speaker3.png" alt="Shraddha Sharma" class="speaker-img w-full h-full object-cover object-top transition-transform duration-500" />
+        </div>
+        <div class="p-6 border-t border-glass-stroke">
+          <h3 class="font-display font-bold text-xl text-on-surface">Shraddha Sharma</h3>
+          <p class="font-mono text-label-caps text-primary uppercase tracking-wider mt-1">Founder, YourStory</p>
+          <p class="font-sans text-body-md text-on-surface-variant mt-3 text-sm leading-relaxed">
+            Founder of YourStory, India's largest media platform for entrepreneurs and startups.
+          </p>
+          <div class="flex gap-2 mt-4">
+            <span class="px-2 py-1 bg-primary/10 border border-primary/20 rounded text-xs font-mono text-primary uppercase tracking-wider">Media</span>
+            <span class="px-2 py-1 bg-primary/10 border border-primary/20 rounded text-xs font-mono text-primary uppercase tracking-wider">Startups</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== AGENDA ===================== -->
+<section id="agenda" class="py-28 px-6 bg-background">
+  <div class="max-w-container mx-auto space-y-12">
+
+    <!-- Header -->
+    <div class="text-center space-y-4 fade-up">
+      <div class="flex items-center justify-center gap-3">
+        <span class="w-8 h-px bg-primary-container"></span>
+        <span class="font-mono text-label-caps text-primary uppercase tracking-widest">Schedule</span>
+        <span class="w-8 h-px bg-primary-container"></span>
+      </div>
+      <h2 class="font-display font-bold text-headline-lg text-on-surface">Event Agenda</h2>
+      <p class="font-sans text-body-lg text-on-surface-variant max-w-xl mx-auto">Two action-packed days of learning, networking, and inspiration.</p>
+    </div>
+
+    <!-- Day Tabs -->
+    <div class="flex justify-center gap-3 fade-up">
+      <button data-tab="day1" class="agenda-tab active px-6 py-2.5 bg-primary-container text-on-primary-container font-display font-semibold text-btn uppercase tracking-wider rounded-DEFAULT transition-colors duration-200">
+        Day 1 · Sept 23
+      </button>
+      <button data-tab="day2" class="agenda-tab px-6 py-2.5 border border-glass-stroke text-on-surface-variant font-display font-semibold text-btn uppercase tracking-wider rounded-DEFAULT hover:border-primary hover:text-primary transition-colors duration-200">
+        Day 2 · Sept 24
+      </button>
+    </div>
+
+    <!-- Day 1 Panel -->
+    <div data-panel="day1" class="agenda-panel fade-up">
+      <div class="relative pl-10 space-y-4">
+        <div class="timeline-line"></div>
+
+        <div class="relative flex gap-6 items-start bg-surface-container border border-glass-stroke rounded-lg p-5 hover:border-primary/40 transition-colors">
+          <div class="timeline-dot"></div>
+          <div class="flex-1">
+            <span class="font-mono text-label-caps text-primary uppercase tracking-wider">09:00 AM</span>
+            <h4 class="font-display font-semibold text-lg text-on-surface mt-1">Inauguration Ceremony</h4>
+            <p class="font-sans text-body-md text-on-surface-variant mt-1">Official opening by Dr. Pramod Padole, Director VNIT, and E-Cell core team.</p>
+          </div>
+          <span class="px-2 py-1 bg-primary/10 border border-primary/20 rounded text-xs font-mono text-primary uppercase tracking-wider hidden sm:block">Ceremony</span>
+        </div>
+
+        <div class="relative flex gap-6 items-start bg-surface-container border border-glass-stroke rounded-lg p-5 hover:border-primary/40 transition-colors">
+          <div class="timeline-dot"></div>
+          <div class="flex-1">
+            <span class="font-mono text-label-caps text-primary uppercase tracking-wider">10:30 AM</span>
+            <h4 class="font-display font-semibold text-lg text-on-surface mt-1">Keynote: The Future of Indian Startups</h4>
+            <p class="font-sans text-body-md text-on-surface-variant mt-1">Aman Gupta on brand building, disrupting markets, and the D2C revolution.</p>
+          </div>
+          <span class="px-2 py-1 bg-primary/10 border border-primary/20 rounded text-xs font-mono text-primary uppercase tracking-wider hidden sm:block">Keynote</span>
+        </div>
+
+        <div class="relative flex gap-6 items-start bg-surface-container border border-glass-stroke rounded-lg p-5 hover:border-primary/40 transition-colors">
+          <div class="timeline-dot"></div>
+          <div class="flex-1">
+            <span class="font-mono text-label-caps text-primary uppercase tracking-wider">12:00 PM</span>
+            <h4 class="font-display font-semibold text-lg text-on-surface mt-1">Startup Expo & Networking Lunch</h4>
+            <p class="font-sans text-body-md text-on-surface-variant mt-1">Explore cutting-edge student startups and connect with industry mentors.</p>
+          </div>
+          <span class="px-2 py-1 bg-tertiary/20 border border-tertiary/30 rounded text-xs font-mono text-tertiary uppercase tracking-wider hidden sm:block">Expo</span>
+        </div>
+
+        <div class="relative flex gap-6 items-start bg-surface-container border border-glass-stroke rounded-lg p-5 hover:border-primary/40 transition-colors">
+          <div class="timeline-dot"></div>
+          <div class="flex-1">
+            <span class="font-mono text-label-caps text-primary uppercase tracking-wider">02:30 PM</span>
+            <h4 class="font-display font-semibold text-lg text-on-surface mt-1">Panel: Funding the Future</h4>
+            <p class="font-sans text-body-md text-on-surface-variant mt-1">Top VCs and angel investors share insights on fundraising in today's climate.</p>
+          </div>
+          <span class="px-2 py-1 bg-primary/10 border border-primary/20 rounded text-xs font-mono text-primary uppercase tracking-wider hidden sm:block">Panel</span>
+        </div>
+
+        <div class="relative flex gap-6 items-start bg-surface-container border border-glass-stroke rounded-lg p-5 hover:border-primary/40 transition-colors">
+          <div class="timeline-dot"></div>
+          <div class="flex-1">
+            <span class="font-mono text-label-caps text-primary uppercase tracking-wider">04:30 PM</span>
+            <h4 class="font-display font-semibold text-lg text-on-surface mt-1">Workshop: Design Thinking for Founders</h4>
+            <p class="font-sans text-body-md text-on-surface-variant mt-1">Hands-on workshop led by product leaders from top Indian startups.</p>
+          </div>
+          <span class="px-2 py-1 bg-secondary/20 border border-secondary/30 rounded text-xs font-mono text-secondary uppercase tracking-wider hidden sm:block">Workshop</span>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Day 2 Panel -->
+    <div data-panel="day2" class="agenda-panel hidden fade-up">
+      <div class="relative pl-10 space-y-4">
+        <div class="timeline-line"></div>
+
+        <div class="relative flex gap-6 items-start bg-surface-container border border-glass-stroke rounded-lg p-5 hover:border-primary/40 transition-colors">
+          <div class="timeline-dot"></div>
+          <div class="flex-1">
+            <span class="font-mono text-label-caps text-primary uppercase tracking-wider">09:30 AM</span>
+            <h4 class="font-display font-semibold text-lg text-on-surface mt-1">Keynote: Building India's Media Ecosystem</h4>
+            <p class="font-sans text-body-md text-on-surface-variant mt-1">Shraddha Sharma on storytelling, entrepreneurship journalism, and YourStory's journey.</p>
+          </div>
+          <span class="px-2 py-1 bg-primary/10 border border-primary/20 rounded text-xs font-mono text-primary uppercase tracking-wider hidden sm:block">Keynote</span>
+        </div>
+
+        <div class="relative flex gap-6 items-start bg-surface-container border border-glass-stroke rounded-lg p-5 hover:border-primary/40 transition-colors">
+          <div class="timeline-dot"></div>
+          <div class="flex-1">
+            <span class="font-mono text-label-caps text-primary uppercase tracking-wider">11:00 AM</span>
+            <h4 class="font-display font-semibold text-lg text-on-surface mt-1">E-Summit Case Study Competition</h4>
+            <p class="font-sans text-body-md text-on-surface-variant mt-1">Top 10 teams pitch real-world business solutions to a jury of founders.</p>
+          </div>
+          <span class="px-2 py-1 bg-tertiary/20 border border-tertiary/30 rounded text-xs font-mono text-tertiary uppercase tracking-wider hidden sm:block">Competition</span>
+        </div>
+
+        <div class="relative flex gap-6 items-start bg-surface-container border border-glass-stroke rounded-lg p-5 hover:border-primary/40 transition-colors">
+          <div class="timeline-dot"></div>
+          <div class="flex-1">
+            <span class="font-mono text-label-caps text-primary uppercase tracking-wider">01:30 PM</span>
+            <h4 class="font-display font-semibold text-lg text-on-surface mt-1">Fireside Chat & Open Q&A</h4>
+            <p class="font-sans text-body-md text-on-surface-variant mt-1">An unfiltered conversation with founders — your questions, real answers.</p>
+          </div>
+          <span class="px-2 py-1 bg-secondary/20 border border-secondary/30 rounded text-xs font-mono text-secondary uppercase tracking-wider hidden sm:block">Fireside</span>
+        </div>
+
+        <div class="relative flex gap-6 items-start bg-surface-container border border-glass-stroke rounded-lg p-5 hover:border-primary/40 transition-colors">
+          <div class="timeline-dot"></div>
+          <div class="flex-1">
+            <span class="font-mono text-label-caps text-primary uppercase tracking-wider">03:30 PM</span>
+            <h4 class="font-display font-semibold text-lg text-on-surface mt-1">Valedictory & Awards Ceremony</h4>
+            <p class="font-sans text-body-md text-on-surface-variant mt-1">Closing ceremony, prize distribution, and the grand networking mixer.</p>
+          </div>
+          <span class="px-2 py-1 bg-primary/10 border border-primary/20 rounded text-xs font-mono text-primary uppercase tracking-wider hidden sm:block">Ceremony</span>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ===================== GALLERY ===================== -->
+<section id="gallery" class="py-28 px-6 bg-surface-container-low border-y border-glass-stroke">
+  <div class="max-w-container mx-auto space-y-12">
+
+    <div class="text-center space-y-4 fade-up">
+      <div class="flex items-center justify-center gap-3">
+        <span class="w-8 h-px bg-primary-container"></span>
+        <span class="font-mono text-label-caps text-primary uppercase tracking-widest">Gallery</span>
+        <span class="w-8 h-px bg-primary-container"></span>
+      </div>
+      <h2 class="font-display font-bold text-headline-lg text-on-surface">Moments from Flagship</h2>
+      <p class="font-sans text-body-lg text-on-surface-variant max-w-xl mx-auto">A glimpse into the energy, passion, and community that defines our summit.</p>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 fade-up">
+      <div class="gallery-item rounded-lg overflow-hidden border border-glass-stroke h-52 md:h-64 col-span-2 md:col-span-1">
+        <img src="assets/images/gallery1.jpg" alt="Flagship 2022 — Keynote" class="w-full h-full object-cover" />
+        <div class="gallery-overlay"></div>
+      </div>
+      <div class="gallery-item rounded-lg overflow-hidden border border-glass-stroke h-52 md:h-64">
+        <img src="assets/images/gallery2.jpg" alt="Flagship 2022 — Expo" class="w-full h-full object-cover" />
+        <div class="gallery-overlay"></div>
+      </div>
+      <div class="gallery-item rounded-lg overflow-hidden border border-glass-stroke h-52 md:h-64">
+        <img src="assets/images/gallery3.jpg" alt="Flagship 2022 — Networking" class="w-full h-full object-cover" />
+        <div class="gallery-overlay"></div>
+      </div>
+      <div class="gallery-item rounded-lg overflow-hidden border border-glass-stroke h-52 md:h-64">
+        <img src="assets/images/gallery2.jpg" alt="Flagship 2022 — Panel" class="w-full h-full object-cover" />
+        <div class="gallery-overlay"></div>
+      </div>
+      <div class="gallery-item rounded-lg overflow-hidden border border-glass-stroke h-52 md:h-64 col-span-2 md:col-span-1">
+        <img src="assets/images/gallery3.jpg" alt="Flagship 2022 — Workshop" class="w-full h-full object-cover" />
+        <div class="gallery-overlay"></div>
+      </div>
+      <div class="gallery-item rounded-lg overflow-hidden border border-glass-stroke h-52 md:h-64">
+        <img src="assets/images/gallery1.jpg" alt="Flagship 2022 — Awards" class="w-full h-full object-cover" />
+        <div class="gallery-overlay"></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ===================== REGISTER ===================== -->
+<section id="register" class="py-28 px-6 bg-background">
+  <div class="max-w-container mx-auto">
+    <div class="max-w-2xl mx-auto">
+
+      <!-- Header -->
+      <div class="text-center space-y-4 mb-12 fade-up">
+        <div class="flex items-center justify-center gap-3">
+          <span class="w-8 h-px bg-primary-container"></span>
+          <span class="font-mono text-label-caps text-primary uppercase tracking-widest">Join Us</span>
+          <span class="w-8 h-px bg-primary-container"></span>
+        </div>
+        <h2 class="font-display font-bold text-headline-lg text-on-surface">Secure Your Spot</h2>
+        <p class="font-sans text-body-lg text-on-surface-variant">
+          Don't miss the biggest entrepreneurial convergence in Central India. Seats are limited.
+        </p>
+      </div>
+
+      <!-- Form Card -->
+      <div class="glass-card rounded-xl p-8 md:p-10 fade-up">
+        <form id="reg-form" class="space-y-6" novalidate>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <label for="reg-name" class="block font-mono text-label-caps text-on-surface-variant uppercase tracking-wider mb-2">Full Name</label>
+              <input id="reg-name" type="text" placeholder="Ravi Sharma"
+                class="form-input w-full bg-surface-container-lowest border-b border-outline text-on-surface px-4 py-3 transition-colors duration-200 font-sans text-body-md placeholder:text-on-surface-variant/40" />
+            </div>
+            <div>
+              <label for="reg-email" class="block font-mono text-label-caps text-on-surface-variant uppercase tracking-wider mb-2">Email Address</label>
+              <input id="reg-email" type="email" placeholder="ravi@example.com"
+                class="form-input w-full bg-surface-container-lowest border-b border-outline text-on-surface px-4 py-3 transition-colors duration-200 font-sans text-body-md placeholder:text-on-surface-variant/40" />
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <label for="reg-college" class="block font-mono text-label-caps text-on-surface-variant uppercase tracking-wider mb-2">College / Institution</label>
+              <input id="reg-college" type="text" placeholder="VNIT Nagpur"
+                class="form-input w-full bg-surface-container-lowest border-b border-outline text-on-surface px-4 py-3 transition-colors duration-200 font-sans text-body-md placeholder:text-on-surface-variant/40" />
+            </div>
+            <div>
+              <label for="reg-phone" class="block font-mono text-label-caps text-on-surface-variant uppercase tracking-wider mb-2">Phone Number</label>
+              <input id="reg-phone" type="tel" placeholder="+91 98765 43210"
+                class="form-input w-full bg-surface-container-lowest border-b border-outline text-on-surface px-4 py-3 transition-colors duration-200 font-sans text-body-md placeholder:text-on-surface-variant/40" />
+            </div>
+          </div>
+
+          <div>
+            <label class="block font-mono text-label-caps text-on-surface-variant uppercase tracking-wider mb-3">I am a</label>
+            <div class="flex flex-wrap gap-3">
+              <label class="flex items-center gap-2 cursor-pointer group">
+                <input type="radio" name="role" value="student" class="sr-only peer" checked />
+                <span class="px-4 py-2 border border-glass-stroke rounded-DEFAULT font-mono text-label-caps uppercase tracking-wider text-on-surface-variant peer-checked:border-primary-container peer-checked:text-primary-container peer-checked:bg-primary/10 transition-all cursor-pointer">Student</span>
+              </label>
+              <label class="flex items-center gap-2 cursor-pointer group">
+                <input type="radio" name="role" value="professional" class="sr-only peer" />
+                <span class="px-4 py-2 border border-glass-stroke rounded-DEFAULT font-mono text-label-caps uppercase tracking-wider text-on-surface-variant peer-checked:border-primary-container peer-checked:text-primary-container peer-checked:bg-primary/10 transition-all cursor-pointer">Professional</span>
+              </label>
+              <label class="flex items-center gap-2 cursor-pointer group">
+                <input type="radio" name="role" value="founder" class="sr-only peer" />
+                <span class="px-4 py-2 border border-glass-stroke rounded-DEFAULT font-mono text-label-caps uppercase tracking-wider text-on-surface-variant peer-checked:border-primary-container peer-checked:text-primary-container peer-checked:bg-primary/10 transition-all cursor-pointer">Founder</span>
+              </label>
+            </div>
+          </div>
+
+          <button type="submit"
+            class="w-full py-4 bg-primary-container text-on-primary-container font-display font-semibold text-btn uppercase tracking-wider rounded-DEFAULT hover:bg-secondary-container transition-colors duration-200 active:scale-[0.99] flex items-center justify-center gap-2">
+            <span class="material-symbols-outlined" style="font-size:18px">check_circle</span>
+            Complete Registration
+          </button>
+
+          <p class="text-center font-mono text-label-caps text-on-surface-variant uppercase tracking-wider">
+            Free entry · Open to all students & professionals
+          </p>
+
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== VENUE ===================== -->
+<section id="venue" class="py-28 px-6 bg-surface-container-low border-y border-glass-stroke">
+  <div class="max-w-container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+    <div class="space-y-6 fade-up">
+      <div class="flex items-center gap-3">
+        <span class="w-8 h-px bg-primary-container"></span>
+        <span class="font-mono text-label-caps text-primary uppercase tracking-widest">Venue</span>
+      </div>
+      <h2 class="font-display font-bold text-headline-lg text-on-surface">Find Your Way Here</h2>
+      <div class="space-y-4">
+        <div class="flex items-start gap-4">
+          <span class="material-symbols-outlined text-primary mt-0.5" style="font-size:22px">location_on</span>
+          <div>
+            <p class="font-display font-semibold text-on-surface">Visvesvaraya National Institute of Technology</p>
+            <p class="font-sans text-body-md text-on-surface-variant">South Ambazari Road, Nagpur, Maharashtra 440010</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4">
+          <span class="material-symbols-outlined text-primary mt-0.5" style="font-size:22px">calendar_today</span>
+          <div>
+            <p class="font-display font-semibold text-on-surface">September 23–24, 2022</p>
+            <p class="font-sans text-body-md text-on-surface-variant">Doors open at 8:30 AM each day</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4">
+          <span class="material-symbols-outlined text-primary mt-0.5" style="font-size:22px">directions_bus</span>
+          <div>
+            <p class="font-display font-semibold text-on-surface">Getting Here</p>
+            <p class="font-sans text-body-md text-on-surface-variant">15 min from Nagpur Railway Station. Ample parking available on campus.</p>
+          </div>
+        </div>
+      </div>
+      <a href="https://maps.google.com/?q=VNIT+Nagpur" target="_blank" rel="noopener"
+         class="inline-flex items-center gap-2 px-6 py-3 border border-primary text-primary font-display font-semibold text-btn uppercase tracking-wider rounded-DEFAULT hover:bg-primary/10 transition-colors duration-200">
+        <span class="material-symbols-outlined" style="font-size:16px">open_in_new</span>
+        Open in Google Maps
+      </a>
+    </div>
+
+    <!-- Map embed placeholder -->
+    <div class="rounded-xl overflow-hidden border border-glass-stroke h-80 fade-up bg-surface-container flex items-center justify-center">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3721.2365043744!2d79.0503!3d21.1326!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4c0a7b7b7b7b7%3A0x7b7b7b7b7b7b7b7b!2sVNIT+Nagpur!5e0!3m2!1sen!2sin!4v1661000000000!5m2!1sen!2sin"
+        width="100%" height="100%" style="border:0; filter: invert(90%) hue-rotate(180deg);"
+        allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        title="VNIT Nagpur Location">
+      </iframe>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="bg-surface-container-lowest border-t border-glass-stroke">
+  <div class="max-w-container mx-auto px-6 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
+
+      <!-- Brand -->
+      <div class="space-y-4">
+        <div class="flex items-center gap-3">
+          <img src="assets/images/ecell-logo.png" alt="E-Cell VNIT" class="h-8 w-auto" onerror="this.style.display='none'" />
+          <div>
+            <span class="font-display font-extrabold text-sm text-on-surface block">E-CELL VNIT</span>
+            <span class="font-mono text-label-caps text-primary">FLAGSHIP '22</span>
+          </div>
+        </div>
+        <p class="font-sans text-body-md text-on-surface-variant text-sm max-w-xs">
+          The Entrepreneurship Cell of VNIT Nagpur — fostering innovation and building the next generation of founders.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="space-y-4">
+        <h4 class="font-mono text-label-caps text-primary uppercase tracking-widest">Quick Links</h4>
+        <div class="flex flex-col gap-2">
+          <a href="#about"    class="font-sans text-body-md text-on-surface-variant hover:text-primary transition-colors">About</a>
+          <a href="#speakers" class="font-sans text-body-md text-on-surface-variant hover:text-primary transition-colors">Speakers</a>
+          <a href="#agenda"   class="font-sans text-body-md text-on-surface-variant hover:text-primary transition-colors">Agenda</a>
+          <a href="#gallery"  class="font-sans text-body-md text-on-surface-variant hover:text-primary transition-colors">Gallery</a>
+          <a href="#register" class="font-sans text-body-md text-on-surface-variant hover:text-primary transition-colors">Register</a>
+        </div>
+      </div>
+
+      <!-- Contact -->
+      <div class="space-y-4">
+        <h4 class="font-mono text-label-caps text-primary uppercase tracking-widest">Contact</h4>
+        <div class="flex flex-col gap-3">
+          <a href="mailto:ecell@vnit.ac.in" class="flex items-center gap-2 font-sans text-body-md text-on-surface-variant hover:text-primary transition-colors">
+            <span class="material-symbols-outlined" style="font-size:16px">mail</span>
+            ecell@vnit.ac.in
+          </a>
+          <a href="https://instagram.com/ecellvnit" target="_blank" rel="noopener" class="flex items-center gap-2 font-sans text-body-md text-on-surface-variant hover:text-primary transition-colors">
+            <span class="material-symbols-outlined" style="font-size:16px">photo_camera</span>
+            @ecellvnit
+          </a>
+          <a href="https://linkedin.com/company/ecell-vnit" target="_blank" rel="noopener" class="flex items-center gap-2 font-sans text-body-md text-on-surface-variant hover:text-primary transition-colors">
+            <span class="material-symbols-outlined" style="font-size:16px">work</span>
+            E-Cell VNIT
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="pt-8 border-t border-glass-stroke flex flex-col sm:flex-row justify-between items-center gap-4">
+      <p class="font-mono text-label-caps text-on-surface-variant uppercase tracking-wider">
+        © 2022 E-Cell VNIT. All rights reserved.
+      </p>
+      <div class="flex gap-6">
+        <a href="#" class="font-mono text-label-caps text-on-surface-variant hover:text-primary transition-colors uppercase tracking-wider">Privacy Policy</a>
+        <a href="#" class="font-mono text-label-caps text-on-surface-variant hover:text-primary transition-colors uppercase tracking-wider">Terms</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+<!-- JS -->
+<script src="assets/js/main.js"></script>
+</body>
+</html>
