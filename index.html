@@ -209,14 +209,148 @@
 
     </div>
 
-    <!-- RIGHT — Logo image -->
+    <!-- RIGHT — Animated SVG Logo -->
     <div class="hidden lg:flex items-center justify-center fade-up">
-      <div class="relative">
-        <!-- Glow ring behind logo -->
-        <div class="absolute inset-0 rounded-full blur-3xl opacity-20 bg-primary-container scale-110"></div>
-        <img src="assets/images/flagship-logo.png" alt="Flagship '22"
-             class="relative w-72 xl:w-96 drop-shadow-2xl object-contain"
-             onerror="this.parentElement.innerHTML='<div class=\'w-72 xl:w-96 h-72 xl:h-96 rounded-full border border-glass-stroke flex items-center justify-center\'><span class=\'font-display font-black text-7xl gradient-text\'>\'22</span></div>'" />
+      <div class="relative w-80 xl:w-[420px]">
+        <!-- Soft glow behind boat -->
+        <div class="absolute inset-0 blur-3xl opacity-20 bg-primary-container rounded-full scale-90 pointer-events-none"></div>
+
+        <svg class="relative w-full h-full drop-shadow-2xl" viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg" aria-label="Flagship '22 Sailboat Logo" role="img">
+          <style>
+            :root{
+              --navy:#312e6b;
+              --navy-2:#3a3776;
+              --blue-1:#2f6db3;
+              --blue-2:#2f97cc;
+              --cyan-1:#3fbfe6;
+              --cyan-2:#57c9ec;
+              --sky:#9fdcf0;
+              --sky-2:#bde7f6;
+            }
+            #boat{
+              transform-origin:520px 900px;
+              animation:rock 4.5s ease-in-out infinite;
+            }
+            @keyframes rock{
+              0%,100%{ transform:rotate(-1.6deg) translateY(0px); }
+              50%{ transform:rotate(1.6deg) translateY(-6px); }
+            }
+            .ribbon{
+              transform-box:fill-box;
+              transform-origin:center;
+              animation:shimmer 3.6s ease-in-out infinite;
+            }
+            @keyframes shimmer{
+              0%,100%{ transform:translateY(0px) scaleY(1); opacity:1; }
+              50%{ transform:translateY(-3px) scaleY(1.015); opacity:.92; }
+            }
+            .r1{animation-delay:0s;}
+            .r2{animation-delay:.25s;}
+            .r3{animation-delay:.5s;}
+            .r4{animation-delay:.75s;}
+            .r5{animation-delay:1s;}
+            .r6{animation-delay:1.25s;}
+            .r7{animation-delay:1.5s;}
+            #mastGroup{
+              transform-box:fill-box;
+              transform-origin:50% 100%;
+              animation:sway 4.5s ease-in-out infinite;
+            }
+            @keyframes sway{
+              0%,100%{ transform:rotate(-1deg); }
+              50%{ transform:rotate(1deg); }
+            }
+            .pennant{
+              transform-box:fill-box;
+              animation:flap 1.8s ease-in-out infinite;
+            }
+            @keyframes flap{
+              0%,100%{ transform:translateX(0px) scaleX(1); opacity:1; }
+              50%{ transform:translateX(-14px) scaleX(.9); opacity:.75; }
+            }
+            .p1{transform-origin:100% 50%; animation-delay:0s;}
+            .p2{transform-origin:100% 50%; animation-delay:.15s;}
+            .p3{transform-origin:100% 50%; animation-delay:.3s;}
+            .p4{transform-origin:100% 50%; animation-delay:.45s;}
+            .p5{transform-origin:100% 50%; animation-delay:.6s;}
+            .p6{transform-origin:100% 50%; animation-delay:.2s;}
+            #hullGroup{
+              transform-box:fill-box;
+              transform-origin:50% 0%;
+              animation:hullbob 4.5s ease-in-out infinite;
+            }
+            @keyframes hullbob{
+              0%,100%{ transform:translateY(0px); }
+              50%{ transform:translateY(4px); }
+            }
+            .wave{ animation:drift 6s linear infinite; }
+            .wave2{ animation-duration:8s; animation-direction:reverse; }
+            @keyframes drift{
+              0%{ transform:translateX(0px); }
+              100%{ transform:translateX(-120px); }
+            }
+          </style>
+
+          <defs>
+            <clipPath id="sailClip">
+              <path d="M622 95 L950 705 L365 800 Z"/>
+            </clipPath>
+            <clipPath id="hullClip">
+              <path d="M40 815 C 260 780, 780 775, 1020 770 C 990 850, 900 935, 760 950 L 300 950 C 190 940, 90 890, 40 815 Z"/>
+            </clipPath>
+          </defs>
+
+          <g id="boat">
+            <!-- Wind pennants / ribbon trails -->
+            <g id="pennants" fill="none">
+              <path class="pennant p1" d="M305 235 C 400 210, 470 190, 640 100 C 560 175, 470 220, 305 235 Z" fill="var(--blue-1)"/>
+              <path class="pennant p2" d="M300 235 C 420 250, 530 235, 625 150 C 545 260, 420 275, 300 235 Z" fill="var(--sky-2)"/>
+              <path class="pennant p3" d="M285 335 C 380 335, 470 300, 545 240 C 470 355, 355 385, 285 335 Z" fill="var(--navy)"/>
+              <path class="pennant p4" d="M185 400 C 300 385, 400 375, 545 305 C 440 420, 300 450, 185 400 Z" fill="var(--cyan-1)"/>
+              <path class="pennant p5" d="M175 435 C 290 450, 390 445, 520 375 C 410 470, 280 495, 175 435 Z" fill="var(--sky-2)"/>
+              <path class="pennant p6" d="M45 615 C 175 600, 300 570, 460 500 C 340 630, 175 665, 45 615 Z" fill="var(--cyan-1)"/>
+              <path class="pennant p2" d="M170 665 C 250 660, 320 635, 400 585 C 330 685, 235 705, 170 665 Z" fill="var(--navy)"/>
+              <path class="pennant p3" d="M195 820 C 260 800, 320 790, 385 795 C 320 830, 250 850, 195 820 Z" fill="var(--blue-1)"/>
+              <path class="pennant p5" d="M50 850 C 150 840, 260 850, 380 800 C 300 880, 165 900, 50 850 Z" fill="var(--cyan-2)"/>
+            </g>
+
+            <!-- Sail with wave-stripe ribbons -->
+            <g clip-path="url(#sailClip)">
+              <rect x="365" y="95" width="600" height="710" fill="var(--sky-2)"/>
+              <path class="ribbon r1" d="M300 250 L1000 200 L1000 300 L300 330 Z" fill="var(--blue-1)"/>
+              <path class="ribbon r2" d="M300 330 L1000 300 L1000 350 L300 380 Z" fill="var(--sky-2)"/>
+              <path class="ribbon r3" d="M300 380 L1000 350 L1000 460 L300 470 Z" fill="var(--cyan-1)"/>
+              <path class="ribbon r4" d="M300 470 L1000 460 L1000 520 L300 540 Z" fill="var(--sky)"/>
+              <path class="ribbon r5" d="M300 540 L1000 520 L1000 600 L300 620 Z" fill="var(--navy)"/>
+              <path class="ribbon r6" d="M300 620 L1000 600 L1000 700 L300 720 Z" fill="var(--cyan-2)"/>
+              <path class="ribbon r7" d="M300 720 L1000 700 L1000 800 L300 800 Z" fill="var(--blue-1)"/>
+              <path class="ribbon r3" d="M300 210 L640 100 L680 110 L340 250 Z" fill="var(--navy-2)"/>
+            </g>
+
+            <!-- Mast -->
+            <g id="mastGroup">
+              <path d="M622 95 L610 800 L638 800 L636 95 Z" fill="#fdfefe"/>
+            </g>
+
+            <!-- Hull -->
+            <g id="hullGroup">
+              <g clip-path="url(#hullClip)">
+                <rect x="0" y="750" width="1080" height="230" fill="var(--cyan-1)"/>
+                <path d="M40 830 C 300 810, 700 805, 1020 790 L1020 860 L40 880 Z" fill="var(--navy)"/>
+                <path d="M40 870 C 300 860, 700 855, 1020 840 L1000 900 C 800 940, 350 945, 200 920 C 120 905, 60 890, 40 870 Z" fill="var(--blue-1)"/>
+              </g>
+            </g>
+
+            <!-- Stern pennant -->
+            <path class="pennant p1" d="M900 785 C 970 775, 1010 780, 1045 795 C 995 815, 940 815, 900 785 Z" fill="var(--cyan-2)"/>
+          </g>
+
+          <!-- Water ripples -->
+          <g stroke-linecap="round" fill="none" opacity="0.35">
+            <path class="wave"  d="M-100 1000 Q 40 985 180 1000 T 460 1000 T 740 1000 T 1020 1000 T 1300 1000" stroke="var(--blue-1)" stroke-width="6"/>
+            <path class="wave wave2" d="M-100 1030 Q 60 1015 220 1030 T 540 1030 T 860 1030 T 1180 1030" stroke="var(--cyan-1)" stroke-width="5"/>
+          </g>
+        </svg>
       </div>
     </div>
 
