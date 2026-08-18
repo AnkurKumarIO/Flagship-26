@@ -9,7 +9,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
 
   <!-- Tailwind CDN -->
@@ -57,6 +57,7 @@
             'sans':       ['Hanken Grotesk', 'sans-serif'],
             'mono':       ['JetBrains Mono', 'monospace'],
             'display':    ['Montserrat', 'sans-serif'],
+            'inter':      ['Inter', 'sans-serif'],
           },
           fontSize: {
             'display-lg':  ['72px',  { lineHeight: '80px',  letterSpacing: '-0.02em', fontWeight: '800' }],
@@ -519,7 +520,7 @@
 
 <!-- ===================== AGENDA ===================== -->
 <section id="agenda" class="py-28 px-6 bg-background">
-  <div class="max-w-container mx-auto space-y-12">
+  <div class="max-w-container mx-auto space-y-14">
 
     <!-- Header -->
     <div class="text-center space-y-4 fade-up">
@@ -534,119 +535,257 @@
 
     <!-- Day Tabs -->
     <div class="flex justify-center gap-3 fade-up">
-      <button data-tab="day1" class="agenda-tab active px-6 py-2.5 bg-primary-container text-on-primary-container font-display font-semibold text-btn uppercase tracking-wider rounded-DEFAULT transition-colors duration-200">
+      <button data-tab="day1" class="agenda-tab active px-8 py-3 bg-primary-container text-on-primary-container font-display font-semibold text-btn uppercase tracking-wider rounded-DEFAULT transition-all duration-200">
         Day 1 · Sept 23
       </button>
-      <button data-tab="day2" class="agenda-tab px-6 py-2.5 border border-glass-stroke text-on-surface-variant font-display font-semibold text-btn uppercase tracking-wider rounded-DEFAULT hover:border-primary hover:text-primary transition-colors duration-200">
+      <button data-tab="day2" class="agenda-tab px-8 py-3 border border-glass-stroke text-on-surface-variant font-display font-semibold text-btn uppercase tracking-wider rounded-DEFAULT hover:border-primary hover:text-primary transition-all duration-200">
         Day 2 · Sept 24
       </button>
     </div>
 
-    <!-- Day 1 Panel -->
+    <!-- ── Day 1 Panel ── -->
     <div data-panel="day1" class="agenda-panel fade-up">
-      <div class="relative pl-10 space-y-4">
-        <div class="timeline-line"></div>
+      <div class="agenda-label font-mono text-label-caps text-primary uppercase tracking-widest text-right mb-6">AGENDA</div>
 
-        <div class="relative flex gap-6 items-start bg-surface-container border border-glass-stroke rounded-lg p-5 hover:border-primary/40 transition-colors">
-          <div class="timeline-dot"></div>
-          <div class="flex-1">
-            <span class="font-mono text-label-caps text-primary uppercase tracking-wider">09:00 AM</span>
-            <h4 class="font-display font-semibold text-lg text-on-surface mt-1">Inauguration Ceremony</h4>
-            <p class="font-sans text-body-md text-on-surface-variant mt-1">Official opening by Dr. Pramod Padole, Director VNIT, and E-Cell core team.</p>
-          </div>
-          <span class="px-2 py-1 bg-primary/10 border border-primary/20 rounded text-xs font-mono text-primary uppercase tracking-wider hidden sm:block">Ceremony</span>
+      <!-- List box container -->
+      <div class="agenda-list-box">
+
+      <!-- Row: Registration -->
+      <div class="agenda-row" data-type="check-in">
+        <!-- Time block -->
+        <div class="agenda-time">
+          <span class="agenda-ampm">AM</span>
+          <span class="agenda-clock">09:00</span>
         </div>
-
-        <div class="relative flex gap-6 items-start bg-surface-container border border-glass-stroke rounded-lg p-5 hover:border-primary/40 transition-colors">
-          <div class="timeline-dot"></div>
-          <div class="flex-1">
-            <span class="font-mono text-label-caps text-primary uppercase tracking-wider">10:30 AM</span>
-            <h4 class="font-display font-semibold text-lg text-on-surface mt-1">Keynote: The Future of Indian Startups</h4>
-            <p class="font-sans text-body-md text-on-surface-variant mt-1">Aman Gupta on brand building, disrupting markets, and the D2C revolution.</p>
-          </div>
-          <span class="px-2 py-1 bg-primary/10 border border-primary/20 rounded text-xs font-mono text-primary uppercase tracking-wider hidden sm:block">Keynote</span>
+        <!-- Dot connector -->
+        <div class="agenda-connector">
+          <div class="agenda-dot"></div>
+          <div class="agenda-vline"></div>
         </div>
-
-        <div class="relative flex gap-6 items-start bg-surface-container border border-glass-stroke rounded-lg p-5 hover:border-primary/40 transition-colors">
-          <div class="timeline-dot"></div>
-          <div class="flex-1">
-            <span class="font-mono text-label-caps text-primary uppercase tracking-wider">12:00 PM</span>
-            <h4 class="font-display font-semibold text-lg text-on-surface mt-1">Startup Expo & Networking Lunch</h4>
-            <p class="font-sans text-body-md text-on-surface-variant mt-1">Explore cutting-edge student startups and connect with industry mentors.</p>
+        <!-- Event card -->
+        <div class="agenda-card" data-type="check-in">
+          <div class="agenda-card-inner">
+            <h4 class="agenda-card-title">Registration, Badge Collection &amp; Networking Breakfast</h4>
+            <div class="agenda-card-meta">
+              <span class="agenda-tag" data-type="check-in">CHECK-IN</span>
+              <span class="agenda-duration">· 60 MIN</span>
+            </div>
           </div>
-          <span class="px-2 py-1 bg-tertiary/20 border border-tertiary/30 rounded text-xs font-mono text-tertiary uppercase tracking-wider hidden sm:block">Expo</span>
         </div>
-
-        <div class="relative flex gap-6 items-start bg-surface-container border border-glass-stroke rounded-lg p-5 hover:border-primary/40 transition-colors">
-          <div class="timeline-dot"></div>
-          <div class="flex-1">
-            <span class="font-mono text-label-caps text-primary uppercase tracking-wider">02:30 PM</span>
-            <h4 class="font-display font-semibold text-lg text-on-surface mt-1">Panel: Funding the Future</h4>
-            <p class="font-sans text-body-md text-on-surface-variant mt-1">Top VCs and angel investors share insights on fundraising in today's climate.</p>
-          </div>
-          <span class="px-2 py-1 bg-primary/10 border border-primary/20 rounded text-xs font-mono text-primary uppercase tracking-wider hidden sm:block">Panel</span>
-        </div>
-
-        <div class="relative flex gap-6 items-start bg-surface-container border border-glass-stroke rounded-lg p-5 hover:border-primary/40 transition-colors">
-          <div class="timeline-dot"></div>
-          <div class="flex-1">
-            <span class="font-mono text-label-caps text-primary uppercase tracking-wider">04:30 PM</span>
-            <h4 class="font-display font-semibold text-lg text-on-surface mt-1">Workshop: Design Thinking for Founders</h4>
-            <p class="font-sans text-body-md text-on-surface-variant mt-1">Hands-on workshop led by product leaders from top Indian startups.</p>
-          </div>
-          <span class="px-2 py-1 bg-secondary/20 border border-secondary/30 rounded text-xs font-mono text-secondary uppercase tracking-wider hidden sm:block">Workshop</span>
-        </div>
-
       </div>
-    </div>
 
-    <!-- Day 2 Panel -->
+      <!-- Row: Inauguration -->
+      <div class="agenda-row" data-type="ceremony">
+        <div class="agenda-time">
+          <span class="agenda-ampm">AM</span>
+          <span class="agenda-clock">10:00</span>
+        </div>
+        <div class="agenda-connector">
+          <div class="agenda-dot"></div>
+          <div class="agenda-vline"></div>
+        </div>
+        <div class="agenda-card" data-type="ceremony">
+          <div class="agenda-card-inner">
+            <h4 class="agenda-card-title">Inauguration &amp; Welcome Note</h4>
+            <div class="agenda-card-meta">
+              <span class="agenda-tag" data-type="ceremony">CEREMONY</span>
+              <span class="agenda-duration">· 30 MIN</span>
+            </div>
+            <p class="agenda-card-desc">Official opening by Dr. Pramod Padole, Director VNIT, and E-Cell core team.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row: Keynote -->
+      <div class="agenda-row" data-type="keynote">
+        <div class="agenda-time">
+          <span class="agenda-ampm">AM</span>
+          <span class="agenda-clock">10:30</span>
+        </div>
+        <div class="agenda-connector">
+          <div class="agenda-dot"></div>
+          <div class="agenda-vline"></div>
+        </div>
+        <div class="agenda-card" data-type="keynote">
+          <div class="agenda-card-inner">
+            <h4 class="agenda-card-title">Aman Gupta — Opening Keynote</h4>
+            <div class="agenda-card-meta">
+              <span class="agenda-tag" data-type="keynote">KEYNOTE</span>
+              <span class="agenda-duration">· 45 MIN</span>
+            </div>
+            <p class="agenda-card-desc">Co-Founder &amp; CMO, boAt · On brand building, disrupting markets, and the D2C revolution.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row: Expo -->
+      <div class="agenda-row" data-type="expo">
+        <div class="agenda-time">
+          <span class="agenda-ampm">PM</span>
+          <span class="agenda-clock">12:00</span>
+        </div>
+        <div class="agenda-connector">
+          <div class="agenda-dot"></div>
+          <div class="agenda-vline"></div>
+        </div>
+        <div class="agenda-card" data-type="expo">
+          <div class="agenda-card-inner">
+            <h4 class="agenda-card-title">Startup Expo &amp; Networking Lunch</h4>
+            <div class="agenda-card-meta">
+              <span class="agenda-tag" data-type="expo">EXPO</span>
+              <span class="agenda-duration">· 90 MIN</span>
+            </div>
+            <p class="agenda-card-desc">Explore cutting-edge student startups and connect with industry mentors over lunch.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row: Panel -->
+      <div class="agenda-row" data-type="panel">
+        <div class="agenda-time">
+          <span class="agenda-ampm">PM</span>
+          <span class="agenda-clock">02:30</span>
+        </div>
+        <div class="agenda-connector">
+          <div class="agenda-dot"></div>
+          <div class="agenda-vline"></div>
+        </div>
+        <div class="agenda-card" data-type="panel">
+          <div class="agenda-card-inner">
+            <h4 class="agenda-card-title">Panel Discussion: Funding the Future</h4>
+            <div class="agenda-card-meta">
+              <span class="agenda-tag" data-type="panel">PANEL</span>
+              <span class="agenda-duration">· 60 MIN</span>
+            </div>
+            <p class="agenda-card-desc">Top VCs and angel investors share insights on fundraising in today's startup climate.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row: Workshop -->
+      <div class="agenda-row" data-type="workshop">
+        <div class="agenda-time">
+          <span class="agenda-ampm">PM</span>
+          <span class="agenda-clock">04:30</span>
+        </div>
+        <div class="agenda-connector">
+          <div class="agenda-dot"></div>
+          <div class="agenda-vline last"></div>
+        </div>
+        <div class="agenda-card" data-type="workshop">
+          <div class="agenda-card-inner">
+            <h4 class="agenda-card-title">Workshop: Design Thinking for Founders</h4>
+            <div class="agenda-card-meta">
+              <span class="agenda-tag" data-type="workshop">WORKSHOP</span>
+              <span class="agenda-duration">· 90 MIN</span>
+            </div>
+            <p class="agenda-card-desc">Hands-on workshop led by product leaders from top Indian startups.</p>
+          </div>
+        </div>
+      </div>
+
+      </div><!-- /agenda-list-box day1 -->
+
+    </div><!-- /day1 -->
+
+    <!-- ── Day 2 Panel ── -->
     <div data-panel="day2" class="agenda-panel hidden fade-up">
-      <div class="relative pl-10 space-y-4">
-        <div class="timeline-line"></div>
+      <div class="agenda-label font-mono text-label-caps text-primary uppercase tracking-widest text-right mb-6">AGENDA</div>
 
-        <div class="relative flex gap-6 items-start bg-surface-container border border-glass-stroke rounded-lg p-5 hover:border-primary/40 transition-colors">
-          <div class="timeline-dot"></div>
-          <div class="flex-1">
-            <span class="font-mono text-label-caps text-primary uppercase tracking-wider">09:30 AM</span>
-            <h4 class="font-display font-semibold text-lg text-on-surface mt-1">Keynote: Building India's Media Ecosystem</h4>
-            <p class="font-sans text-body-md text-on-surface-variant mt-1">Shraddha Sharma on storytelling, entrepreneurship journalism, and YourStory's journey.</p>
-          </div>
-          <span class="px-2 py-1 bg-primary/10 border border-primary/20 rounded text-xs font-mono text-primary uppercase tracking-wider hidden sm:block">Keynote</span>
+      <!-- List box container -->
+      <div class="agenda-list-box">
+
+      <!-- Row: Keynote -->
+      <div class="agenda-row" data-type="keynote">
+        <div class="agenda-time">
+          <span class="agenda-ampm">AM</span>
+          <span class="agenda-clock">09:30</span>
         </div>
-
-        <div class="relative flex gap-6 items-start bg-surface-container border border-glass-stroke rounded-lg p-5 hover:border-primary/40 transition-colors">
-          <div class="timeline-dot"></div>
-          <div class="flex-1">
-            <span class="font-mono text-label-caps text-primary uppercase tracking-wider">11:00 AM</span>
-            <h4 class="font-display font-semibold text-lg text-on-surface mt-1">E-Summit Case Study Competition</h4>
-            <p class="font-sans text-body-md text-on-surface-variant mt-1">Top 10 teams pitch real-world business solutions to a jury of founders.</p>
-          </div>
-          <span class="px-2 py-1 bg-tertiary/20 border border-tertiary/30 rounded text-xs font-mono text-tertiary uppercase tracking-wider hidden sm:block">Competition</span>
+        <div class="agenda-connector">
+          <div class="agenda-dot"></div>
+          <div class="agenda-vline"></div>
         </div>
-
-        <div class="relative flex gap-6 items-start bg-surface-container border border-glass-stroke rounded-lg p-5 hover:border-primary/40 transition-colors">
-          <div class="timeline-dot"></div>
-          <div class="flex-1">
-            <span class="font-mono text-label-caps text-primary uppercase tracking-wider">01:30 PM</span>
-            <h4 class="font-display font-semibold text-lg text-on-surface mt-1">Fireside Chat & Open Q&A</h4>
-            <p class="font-sans text-body-md text-on-surface-variant mt-1">An unfiltered conversation with founders — your questions, real answers.</p>
+        <div class="agenda-card" data-type="keynote">
+          <div class="agenda-card-inner">
+            <h4 class="agenda-card-title">Shraddha Sharma — Keynote Address</h4>
+            <div class="agenda-card-meta">
+              <span class="agenda-tag" data-type="keynote">KEYNOTE</span>
+              <span class="agenda-duration">· 40 MIN</span>
+            </div>
+            <p class="agenda-card-desc">Founder, YourStory · On storytelling, entrepreneurship journalism, and India's startup story.</p>
           </div>
-          <span class="px-2 py-1 bg-secondary/20 border border-secondary/30 rounded text-xs font-mono text-secondary uppercase tracking-wider hidden sm:block">Fireside</span>
         </div>
-
-        <div class="relative flex gap-6 items-start bg-surface-container border border-glass-stroke rounded-lg p-5 hover:border-primary/40 transition-colors">
-          <div class="timeline-dot"></div>
-          <div class="flex-1">
-            <span class="font-mono text-label-caps text-primary uppercase tracking-wider">03:30 PM</span>
-            <h4 class="font-display font-semibold text-lg text-on-surface mt-1">Valedictory & Awards Ceremony</h4>
-            <p class="font-sans text-body-md text-on-surface-variant mt-1">Closing ceremony, prize distribution, and the grand networking mixer.</p>
-          </div>
-          <span class="px-2 py-1 bg-primary/10 border border-primary/20 rounded text-xs font-mono text-primary uppercase tracking-wider hidden sm:block">Ceremony</span>
-        </div>
-
       </div>
-    </div>
+
+      <!-- Row: Competition -->
+      <div class="agenda-row" data-type="competition">
+        <div class="agenda-time">
+          <span class="agenda-ampm">AM</span>
+          <span class="agenda-clock">11:00</span>
+        </div>
+        <div class="agenda-connector">
+          <div class="agenda-dot"></div>
+          <div class="agenda-vline"></div>
+        </div>
+        <div class="agenda-card" data-type="competition">
+          <div class="agenda-card-inner">
+            <h4 class="agenda-card-title">E-Summit Case Study Competition</h4>
+            <div class="agenda-card-meta">
+              <span class="agenda-tag" data-type="competition">COMPETITION</span>
+              <span class="agenda-duration">· 90 MIN</span>
+            </div>
+            <p class="agenda-card-desc">Top 10 teams pitch real-world business solutions to a jury of founders and investors.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row: Fireside -->
+      <div class="agenda-row" data-type="panel">
+        <div class="agenda-time">
+          <span class="agenda-ampm">PM</span>
+          <span class="agenda-clock">01:30</span>
+        </div>
+        <div class="agenda-connector">
+          <div class="agenda-dot"></div>
+          <div class="agenda-vline"></div>
+        </div>
+        <div class="agenda-card" data-type="panel">
+          <div class="agenda-card-inner">
+            <h4 class="agenda-card-title">Fireside Chat &amp; Open Q&amp;A</h4>
+            <div class="agenda-card-meta">
+              <span class="agenda-tag" data-type="panel">FIRESIDE</span>
+              <span class="agenda-duration">· 45 MIN</span>
+            </div>
+            <p class="agenda-card-desc">An unfiltered conversation with founders — your questions, real answers.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row: Valedictory -->
+      <div class="agenda-row" data-type="ceremony">
+        <div class="agenda-time">
+          <span class="agenda-ampm">PM</span>
+          <span class="agenda-clock">03:30</span>
+        </div>
+        <div class="agenda-connector">
+          <div class="agenda-dot"></div>
+          <div class="agenda-vline last"></div>
+        </div>
+        <div class="agenda-card" data-type="ceremony">
+          <div class="agenda-card-inner">
+            <h4 class="agenda-card-title">Valedictory &amp; Awards Ceremony</h4>
+            <div class="agenda-card-meta">
+              <span class="agenda-tag" data-type="ceremony">CEREMONY</span>
+              <span class="agenda-duration">· 60 MIN</span>
+            </div>
+            <p class="agenda-card-desc">Closing ceremony, prize distribution, and the grand networking mixer.</p>
+          </div>
+        </div>
+      </div>
+
+      </div><!-- /agenda-list-box day2 -->
+
+    </div><!-- /day2 -->
 
   </div>
 </section>
@@ -666,30 +805,71 @@
       <p class="font-sans text-body-lg text-on-surface-variant max-w-xl mx-auto">A glimpse into the energy, passion, and community that defines our summit.</p>
     </div>
 
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 fade-up">
-      <div class="gallery-item rounded-lg overflow-hidden border border-glass-stroke h-52 md:h-64 col-span-2 md:col-span-1">
-        <img src="assets/images/gallery1.jpg" alt="Flagship 2022 — Keynote" class="w-full h-full object-cover" />
-        <div class="gallery-overlay"></div>
-      </div>
-      <div class="gallery-item rounded-lg overflow-hidden border border-glass-stroke h-52 md:h-64">
-        <img src="assets/images/gallery2.jpg" alt="Flagship 2022 — Expo" class="w-full h-full object-cover" />
-        <div class="gallery-overlay"></div>
-      </div>
-      <div class="gallery-item rounded-lg overflow-hidden border border-glass-stroke h-52 md:h-64">
-        <img src="assets/images/gallery3.jpg" alt="Flagship 2022 — Networking" class="w-full h-full object-cover" />
-        <div class="gallery-overlay"></div>
-      </div>
-      <div class="gallery-item rounded-lg overflow-hidden border border-glass-stroke h-52 md:h-64">
-        <img src="assets/images/gallery2.jpg" alt="Flagship 2022 — Panel" class="w-full h-full object-cover" />
-        <div class="gallery-overlay"></div>
-      </div>
-      <div class="gallery-item rounded-lg overflow-hidden border border-glass-stroke h-52 md:h-64 col-span-2 md:col-span-1">
-        <img src="assets/images/gallery3.jpg" alt="Flagship 2022 — Workshop" class="w-full h-full object-cover" />
-        <div class="gallery-overlay"></div>
-      </div>
-      <div class="gallery-item rounded-lg overflow-hidden border border-glass-stroke h-52 md:h-64">
-        <img src="assets/images/gallery1.jpg" alt="Flagship 2022 — Awards" class="w-full h-full object-cover" />
-        <div class="gallery-overlay"></div>
+    <!-- Carousel Container -->
+    <div class="carousel-container fade-up relative w-full overflow-hidden">
+      <!-- Gradient masks for smooth fading on edges -->
+      <div class="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-surface-container-low to-transparent z-10 pointer-events-none"></div>
+      <div class="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-surface-container-low to-transparent z-10 pointer-events-none"></div>
+      
+      <!-- Track sliding right -->
+      <div class="carousel-track flex gap-4 w-max">
+        
+        <!-- Group 1 -->
+        <div class="flex gap-4">
+          <div class="gallery-item rounded-lg overflow-hidden border border-glass-stroke h-52 md:h-64 w-[300px] shrink-0">
+            <img src="assets/images/gallery1.jpg" alt="Flagship 2022 — Keynote" class="w-full h-full object-cover" />
+            <div class="gallery-overlay"></div>
+          </div>
+          <div class="gallery-item rounded-lg overflow-hidden border border-glass-stroke h-52 md:h-64 w-[400px] shrink-0">
+            <img src="assets/images/gallery2.jpg" alt="Flagship 2022 — Expo" class="w-full h-full object-cover" />
+            <div class="gallery-overlay"></div>
+          </div>
+          <div class="gallery-item rounded-lg overflow-hidden border border-glass-stroke h-52 md:h-64 w-[300px] shrink-0">
+            <img src="assets/images/gallery3.jpg" alt="Flagship 2022 — Networking" class="w-full h-full object-cover" />
+            <div class="gallery-overlay"></div>
+          </div>
+          <div class="gallery-item rounded-lg overflow-hidden border border-glass-stroke h-52 md:h-64 w-[350px] shrink-0">
+            <img src="assets/images/gallery2.jpg" alt="Flagship 2022 — Panel" class="w-full h-full object-cover" />
+            <div class="gallery-overlay"></div>
+          </div>
+          <div class="gallery-item rounded-lg overflow-hidden border border-glass-stroke h-52 md:h-64 w-[350px] shrink-0">
+            <img src="assets/images/gallery3.jpg" alt="Flagship 2022 — Workshop" class="w-full h-full object-cover" />
+            <div class="gallery-overlay"></div>
+          </div>
+          <div class="gallery-item rounded-lg overflow-hidden border border-glass-stroke h-52 md:h-64 w-[300px] shrink-0">
+            <img src="assets/images/gallery1.jpg" alt="Flagship 2022 — Awards" class="w-full h-full object-cover" />
+            <div class="gallery-overlay"></div>
+          </div>
+        </div>
+
+        <!-- Group 2 (Duplicate for infinite loop) -->
+        <div class="flex gap-4">
+          <div class="gallery-item rounded-lg overflow-hidden border border-glass-stroke h-52 md:h-64 w-[300px] shrink-0">
+            <img src="assets/images/gallery1.jpg" alt="Flagship 2022 — Keynote" class="w-full h-full object-cover" />
+            <div class="gallery-overlay"></div>
+          </div>
+          <div class="gallery-item rounded-lg overflow-hidden border border-glass-stroke h-52 md:h-64 w-[400px] shrink-0">
+            <img src="assets/images/gallery2.jpg" alt="Flagship 2022 — Expo" class="w-full h-full object-cover" />
+            <div class="gallery-overlay"></div>
+          </div>
+          <div class="gallery-item rounded-lg overflow-hidden border border-glass-stroke h-52 md:h-64 w-[300px] shrink-0">
+            <img src="assets/images/gallery3.jpg" alt="Flagship 2022 — Networking" class="w-full h-full object-cover" />
+            <div class="gallery-overlay"></div>
+          </div>
+          <div class="gallery-item rounded-lg overflow-hidden border border-glass-stroke h-52 md:h-64 w-[350px] shrink-0">
+            <img src="assets/images/gallery2.jpg" alt="Flagship 2022 — Panel" class="w-full h-full object-cover" />
+            <div class="gallery-overlay"></div>
+          </div>
+          <div class="gallery-item rounded-lg overflow-hidden border border-glass-stroke h-52 md:h-64 w-[350px] shrink-0">
+            <img src="assets/images/gallery3.jpg" alt="Flagship 2022 — Workshop" class="w-full h-full object-cover" />
+            <div class="gallery-overlay"></div>
+          </div>
+          <div class="gallery-item rounded-lg overflow-hidden border border-glass-stroke h-52 md:h-64 w-[300px] shrink-0">
+            <img src="assets/images/gallery1.jpg" alt="Flagship 2022 — Awards" class="w-full h-full object-cover" />
+            <div class="gallery-overlay"></div>
+          </div>
+        </div>
+
       </div>
     </div>
 
