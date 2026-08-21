@@ -72,6 +72,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
   sections.forEach(section => sectionObserver.observe(section));
 
+  /* ---- Registration Modal ---- */
+  const regModal = document.getElementById('register-modal');
+  const openModalBtn = document.getElementById('open-register-modal');
+  const closeModalBtn = document.getElementById('close-modal');
+  const modalBackdrop = document.getElementById('modal-backdrop');
+  
+  if (regModal && openModalBtn && closeModalBtn && modalBackdrop) {
+    const openModal = () => {
+      regModal.classList.remove('opacity-0', 'pointer-events-none');
+      document.body.style.overflow = 'hidden'; // Prevent scrolling
+    };
+
+    const closeModal = () => {
+      regModal.classList.add('opacity-0', 'pointer-events-none');
+      document.body.style.overflow = '';
+    };
+
+    openModalBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      openModal();
+    });
+    closeModalBtn.addEventListener('click', closeModal);
+    modalBackdrop.addEventListener('click', closeModal);
+  }
+
   /* ---- Registration Form ---- */
   const form = document.getElementById('reg-form');
   if (form) {
@@ -99,6 +124,10 @@ document.addEventListener('DOMContentLoaded', () => {
         form.reset();
         btn.disabled = false;
         btn.innerHTML = '<span class="material-symbols-outlined" style="font-size:18px">check_circle</span> Complete Registration';
+        if (regModal) {
+          regModal.classList.add('opacity-0', 'pointer-events-none');
+          document.body.style.overflow = '';
+        }
       }, 1500);
     });
   }
