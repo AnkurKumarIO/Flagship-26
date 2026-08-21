@@ -1,5 +1,5 @@
 /* ============================================
-   FLAGSHIP '22 — E-Cell VNIT | main.js
+   FLAGSHIP '26 — E-Cell VNIT | main.js
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -40,9 +40,18 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.1 });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  document.querySelectorAll('.fade-up').forEach(el => {
+    // Hero elements animate in immediately with a stagger
+    if (el.closest('#hero')) {
+      const siblings = [...el.closest('#hero').querySelectorAll('.fade-up')];
+      const idx = siblings.indexOf(el);
+      setTimeout(() => el.classList.add('visible'), 100 + idx * 120);
+    } else {
+      observer.observe(el);
+    }
+  });
 
   /* ---- Active nav link on scroll ---- */
   const sections = document.querySelectorAll('section[id], header[id]');
@@ -63,50 +72,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   sections.forEach(section => sectionObserver.observe(section));
 
-  /* ---- Countdown Timer ---- */
-  const eventDate = new Date('2022-09-24T09:00:00');
-  const timerEl = document.getElementById('countdown');
-
-  function updateCountdown() {
-    if (!timerEl) return;
-    const now = new Date();
-    const diff = eventDate - now;
-
-    if (diff <= 0) {
-      timerEl.innerHTML = '<span class="text-primary font-bold">Event is Live!</span>';
-      return;
-    }
-
-    const days    = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours   = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-    const pad = n => String(n).padStart(2, '0');
-
-    timerEl.innerHTML = `
-      <div class="flex gap-3 flex-wrap">
-        ${[['Days', days], ['Hrs', hours], ['Min', minutes], ['Sec', seconds]].map(([label, val]) => `
-          <div class="flex flex-col items-center min-w-[52px] bg-surface-container border border-glass-stroke rounded-lg px-3 py-2">
-            <span class="font-mono text-2xl font-bold text-primary tabular-nums">${pad(val)}</span>
-            <span class="text-[10px] text-on-surface-variant font-mono uppercase tracking-widest mt-0.5">${label}</span>
-          </div>
-        `).join('')}
-      </div>
-    `;
-  }
-
-  updateCountdown();
-  setInterval(updateCountdown, 1000);
-
   /* ---- Registration Form ---- */
   const form = document.getElementById('reg-form');
   if (form) {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
       const btn = form.querySelector('button[type="submit"]');
-      const name  = form.querySelector('#reg-name').value.trim();
-      const email = form.querySelector('#reg-email').value.trim();
+      const name    = form.querySelector('#reg-name').value.trim();
+      const email   = form.querySelector('#reg-email').value.trim();
       const college = form.querySelector('#reg-college').value.trim();
 
       if (!name || !email || !college) {
@@ -125,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
         showToast('Registration successful! Check your email.', 'success');
         form.reset();
         btn.disabled = false;
-        btn.textContent = 'Complete Registration';
+        btn.innerHTML = '<span class="material-symbols-outlined" style="font-size:18px">check_circle</span> Complete Registration';
       }, 1500);
     });
   }
@@ -137,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const toast = document.createElement('div');
     toast.id = 'toast';
-    toast.className = `fixed bottom-8 left-1/2 -translate-x-1/2 z-[9999] px-6 py-3 rounded-lg font-button text-sm uppercase tracking-wider transition-all duration-300 ${
+    toast.className = `fixed bottom-8 left-1/2 -translate-x-1/2 z-[9999] px-6 py-3 rounded-lg font-mono text-sm uppercase tracking-wider transition-all duration-300 ${
       type === 'success'
         ? 'bg-primary-container text-on-primary-container'
         : 'bg-error-container text-on-error-container'
